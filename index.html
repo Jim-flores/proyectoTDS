@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        
+        <template>
+            <v-card max-width="400" class="mx-auto mt-5" style="padding: 20px;">
+            <v-form
+              ref="form"
+              v-model="valid"
+              lazy-validation
+              
+            >
+              <h1 style="text-align: center; color: rgb(0, 107, 156);">Iniciar Sesion</h1>
+              <v-text-field
+              label="Usuario"
+              name="User"
+              prepend-icon="mdi-account"
+              type="text"
+              color="blue"
+              v-model="user"
+              ></v-text-field>
+          
+              <v-text-field
+              id="password"
+              label="Contraseña"
+              name="Password"
+              prepend-icon="mdi-lock"
+              type="password"
+              color="blue"
+              v-model="password"
+                required
+              ></v-text-field>
+              
+              <div class="text-center mt-3">
+                <!-- <v-btn rounded color="#1565c0" dark @click="ingresar">Iniciar</v-btn> -->
+                
+                  <v-btn
+                    color="primary"
+                    dark
+                    href="index.html"
+                  >
+                  Ingresar
+                  </v-btn> 
+              </div>
+            </v-form>
+        </v-card>
+          </template>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data (){
+          return{
+            valid: true,
+            User: "",
+            Password: "",
+
+          }
+      },
+      methods: {
+      ingresar(){
+          
+      }
+    },
+    })
+  </script>
+</body>
+</html>
+
+
+
