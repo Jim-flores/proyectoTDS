@@ -40,16 +40,25 @@
               v-model="password"
                 required
               ></v-text-field>
-              
+              <p v-if= "alerta">Usuario o contraseña no valida</p>
               <div class="text-center mt-3">
                 <!-- <v-btn rounded color="#1565c0" dark @click="ingresar">Iniciar</v-btn> -->
                 
                   <v-btn
+                    color="error"
+                    dark
+                    v-if = "validacion"
+                    @click="ingresar"
+                    >
+                  Validar
+                  </v-btn> 
+                  <v-btn
+                    v-if = "ventana"
                     color="primary"
                     dark
-                    href="index.html"
-                  >
-                  Ingresar
+                    href ='http://185.70.198.168/menu.html'
+                    >
+                  acceder
                   </v-btn> 
               </div>
             </v-form>
@@ -68,14 +77,24 @@
       data (){
           return{
             valid: true,
-            User: "",
-            Password: "",
+            user: '',
+            password: '',
+            ventana: false,
+            validacion: true,
+            alerta: false,
 
           }
       },
       methods: {
-      ingresar(){
-          
+        ingresar(){
+            if(this.user == 'admin' && this.password == 'admin'){
+              this.alerta = false
+              this.ventana = true
+              this.validacion = false
+            }else{
+              this.alerta = true
+            }
+            
       }
     },
     })
