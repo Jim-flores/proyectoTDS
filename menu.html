@@ -24,7 +24,7 @@
                       Farmacia
                     </v-list-item-title>
                     <v-list-item-subtitle>
-                      matasanos
+                      24h
                     </v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
@@ -36,18 +36,39 @@
                   nav
                 >
                   <v-list-item
-                    v-for="item in items"
-                    :key="item.title"
-                    link
+                    href="http://185.70.198.168/productos.html"
                   >
                     <v-list-item-icon>
-                      <v-icon>{{ item.icon }}</v-icon>
+                      <v-icon>mdi-view-dashboard</v-icon>
                     </v-list-item-icon>
           
                     <v-list-item-content>
-                      <v-list-item-title>{{ item.title }}</v-list-item-title>
+                      <v-list-item-title>Productos</v-list-item-title>
                     </v-list-item-content>
-                  </v-list-item>
+                  </v-list-item>  
+                  <v-list-item
+                    href="http://185.70.198.168/empleados.html"
+                  >
+                  <v-list-item-icon>
+                    <v-icon>mdi-account</v-icon>
+                  </v-list-item-icon>
+        
+                  <v-list-item-content>
+                    <v-list-item-title>Empleados</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+                <v-list-item
+                    href="http://185.70.198.168/index.html"
+                  >
+                  <v-list-item-icon>
+                    <v-icon>mdi-logout</v-icon>
+                  </v-list-item-icon>
+        
+                  <v-list-item-content>
+                    <v-list-item-title>Cerrar Sesion</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+                </v-list-item>
                 </v-list>
               </v-navigation-drawer>
             </v-card>
@@ -64,12 +85,7 @@
       vuetify: new Vuetify(),
       data(){
           return{
-            items: [
-          { title: 'Productos', icon: 'mdi-view-dashboard' },
-          { title: 'Empleados', icon: 'mdi-account' },
-          
-        ],
-        right: null,
+            right: null,
           }
       }
     })
